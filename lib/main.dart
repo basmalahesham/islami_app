@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/core/theme/app_theme.dart';
 import 'package:islami_app/layout/home_layout.dart';
 import 'package:islami_app/modules/splash/splash_view.dart';
 
@@ -15,21 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-
-          centerTitle: true,
-          titleTextStyle: TextStyle(
-            fontSize: 30,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+      theme: AppTheme.lightTheme,
       initialRoute: SplashView.routeName,
       routes: {
         SplashView.routeName: (context) => const SplashView(),
