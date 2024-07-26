@@ -17,7 +17,11 @@ class HomeLayout extends StatelessWidget {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        //appBar: AppBar(),
+        appBar: AppBar(
+          title: Text(
+            'Islami'
+          ),
+        ),
       ),
     );
   }
