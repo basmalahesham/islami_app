@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:islami_app/layout/home_layout.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
@@ -10,7 +11,7 @@ class SplashView extends StatelessWidget {
       const Duration(
         seconds: 3,
       ),
-      () => Navigator.of(context).pushReplacementNamed(routeName),
+      () => Navigator.of(context).pushReplacementNamed(HomeLayout.routeName),
     );
     return Container(
       decoration: const BoxDecoration(

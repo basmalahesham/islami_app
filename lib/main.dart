@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/layout/home_layout.dart';
 import 'package:islami_app/modules/splash/splash_view.dart';
 
 void main() {
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       initialRoute: SplashView.routeName,
       routes: {
         SplashView.routeName: (context) => const SplashView(),
+        HomeLayout.routeName: (context) => const HomeLayout(),
       },
     );
   }
