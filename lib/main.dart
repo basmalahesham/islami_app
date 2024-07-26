@@ -19,10 +19,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: SplashView.routeName,
       routes: {
-        SplashView.routeName: (context)=> const SplashView(),
+        SplashView.routeName: (context) => const SplashView(),
       },
     );
   }
 }
-
 
