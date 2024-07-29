@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/modules/quran/widgets/suraName_widget.dart';
 import 'package:islami_app/modules/quran/widgets/sura_title_header_widget.dart';
 
 class QuranView extends StatelessWidget {
@@ -121,7 +122,6 @@ class QuranView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
     return Center(
       child: Column(
         children: [
@@ -129,7 +129,7 @@ class QuranView extends StatelessWidget {
           SuraTitleHeaderWidget(),
           Expanded(
             child: ListView.builder(
-              itemBuilder: (context, index) => Text(suraNames[index]),
+              itemBuilder: (context, index) => SuraNameWidget(suraName: suraNames[index],suraNumber: index,),
               itemCount: suraNames.length,
             ),
           ),

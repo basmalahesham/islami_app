@@ -12,15 +12,19 @@ class SuraTitleHeaderWidget extends StatelessWidget {
         Divider(
           color: theme.primaryColor,
           thickness: 2,
+          height: 0,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text(
-              'رقم السورة',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w400,
+            Expanded(
+              child: Text(
+                'رقم السورة',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
             Container(
@@ -28,11 +32,14 @@ class SuraTitleHeaderWidget extends StatelessWidget {
               width: 2,
               height: 40,
             ),
-            Text(
-              'اسم السورة',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w400,
+            Expanded(
+              child: Text(
+                'اسم السورة',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
           ],
@@ -40,6 +47,7 @@ class SuraTitleHeaderWidget extends StatelessWidget {
         Divider(
           color: theme.primaryColor,
           thickness: 2,
+          height: 0,
         ),
       ],
     );
