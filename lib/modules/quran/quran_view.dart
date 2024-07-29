@@ -4,6 +4,6 @@ class QuranView extends StatelessWidget {
   const QuranView({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Container();
   }
 }
