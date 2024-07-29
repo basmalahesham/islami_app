@@ -10,15 +10,15 @@ class SuraNameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return GestureDetector(
-      onTap: (){
-        Navigator.pushNamed(context, SuraDetailsView.routeName);
+      onTap: () {
+        Navigator.pushNamed(context, SuraDetailsView.routeName,arguments: SuraDetails(suraName, suraNumber),);
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Expanded(
             child: Text(
-              '${suraNumber+1}',
+              '${suraNumber + 1}',
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 24,
@@ -45,4 +45,9 @@ class SuraNameWidget extends StatelessWidget {
       ),
     );
   }
+}
+class SuraDetails{
+  String suraName;
+  int suraNumber;
+  SuraDetails(this.suraName, this.suraNumber);
 }
