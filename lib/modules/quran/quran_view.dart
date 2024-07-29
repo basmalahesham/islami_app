@@ -126,7 +126,7 @@ class QuranView extends StatelessWidget {
       child: Column(
         children: [
           Image.asset('assets/images/qur2an_screen_logo.png'),
-          SuraTitleHeaderWidget(),
+          const SuraTitleHeaderWidget(),
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index) => SuraNameWidget(suraName: suraNames[index],suraNumber: index,),

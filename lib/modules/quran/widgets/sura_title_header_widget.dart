@@ -17,7 +17,7 @@ class SuraTitleHeaderWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Expanded(
+            const Expanded(
               child: Text(
                 'رقم السورة',
                 textAlign: TextAlign.center,
@@ -32,7 +32,7 @@ class SuraTitleHeaderWidget extends StatelessWidget {
               width: 2,
               height: 40,
             ),
-            Expanded(
+            const Expanded(
               child: Text(
                 'اسم السورة',
                 textAlign: TextAlign.center,
