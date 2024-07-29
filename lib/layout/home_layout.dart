@@ -7,7 +7,7 @@ class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
             'assets/images/default_bg.png',
@@ -18,9 +18,25 @@ class HomeLayout extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text(
-            'Islami'
-          ),
+          title: const Text('Islami'),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage('assets/images/icon_quran.png')),
+                label: 'Quran'),
+            BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage('assets/images/icon_hadeth.png')),
+                label: 'Hadeth'),
+            BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage('assets/images/icon_sebha.png')),
+                label: 'Sebha'),
+            BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage('assets/images/icon_radio.png')),
+                label: 'Radio'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: 'Settings'),
+          ],
         ),
       ),
     );
