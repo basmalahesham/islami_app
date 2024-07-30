@@ -24,7 +24,7 @@ class SuraNameWidget extends StatelessWidget {
             ),
           ),
           Container(
-            color: theme.primaryColor,
+            color: theme.canvasColor,
             width: 2,
             height: 40,
           ),

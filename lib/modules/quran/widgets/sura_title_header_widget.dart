@@ -10,7 +10,7 @@ class SuraTitleHeaderWidget extends StatelessWidget {
     return Column(
       children: [
         Divider(
-          color: theme.primaryColor,
+          color: theme.canvasColor,
           thickness: 2,
           height: 0,
         ),
@@ -25,7 +25,7 @@ class SuraTitleHeaderWidget extends StatelessWidget {
               ),
             ),
             Container(
-              color: theme.primaryColor,
+              color: theme.canvasColor,
               width: 2,
               height: 40,
             ),
@@ -39,7 +39,7 @@ class SuraTitleHeaderWidget extends StatelessWidget {
           ],
         ),
         Divider(
-          color: theme.primaryColor,
+          color: theme.canvasColor,
           thickness: 2,
           height: 0,
         ),

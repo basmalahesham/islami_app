@@ -22,7 +22,7 @@ class _HadethViewState extends State<HadethView> {
           Image.asset('assets/images/hadeth_logo.png'),
           Divider(
             thickness: 1.5,
-            color: theme.primaryColor,
+            color: theme.canvasColor,
             indent: 20,
             endIndent: 20,
           ),
@@ -32,7 +32,7 @@ class _HadethViewState extends State<HadethView> {
           ),
           Divider(
             thickness: 1.5,
-            color: theme.primaryColor,
+            color: theme.canvasColor,
             indent: 20,
             endIndent: 20,
           ),

@@ -129,7 +129,10 @@ class QuranView extends StatelessWidget {
           const SuraTitleHeaderWidget(),
           Expanded(
             child: ListView.builder(
-              itemBuilder: (context, index) => SuraNameWidget(suraName: suraNames[index],suraNumber: index,),
+              itemBuilder: (context, index) => SuraNameWidget(
+                suraName: suraNames[index],
+                suraNumber: index,
+              ),
               itemCount: suraNames.length,
             ),
           ),
