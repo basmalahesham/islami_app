@@ -17,14 +17,11 @@ class SuraTitleHeaderWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Expanded(
+            Expanded(
               child: Text(
                 'رقم السورة',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+                style: theme.textTheme.bodyMedium,
               ),
             ),
             Container(
@@ -32,14 +29,11 @@ class SuraTitleHeaderWidget extends StatelessWidget {
               width: 2,
               height: 40,
             ),
-            const Expanded(
+            Expanded(
               child: Text(
                 'اسم السورة',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+                style: theme.textTheme.bodyMedium,
               ),
             ),
           ],

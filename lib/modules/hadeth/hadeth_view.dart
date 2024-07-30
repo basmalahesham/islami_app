@@ -26,12 +26,9 @@ class _HadethViewState extends State<HadethView> {
             indent: 20,
             endIndent: 20,
           ),
-          const Text(
+           Text(
             'الاحاديث',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.w500,
-            ),
+            style: theme.textTheme.bodyMedium,
           ),
           Divider(
             thickness: 1.5,
@@ -52,9 +49,7 @@ class _HadethViewState extends State<HadethView> {
                 child: Text(
                   allHadeth[index].title,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 25,
-                  ),
+                  style: theme.textTheme.bodyMedium,
                 ),
               ),
               itemCount: allHadeth.length,

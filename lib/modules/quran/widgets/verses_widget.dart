@@ -8,6 +8,7 @@ class VersesWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     Theme.of(context);
     return Container(
       padding: const EdgeInsets.symmetric(
@@ -17,11 +18,7 @@ class VersesWidgets extends StatelessWidget {
       child: Text(
         '$content($index)',
         textDirection: TextDirection.rtl,
-        style: const TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        ),
+        style: theme.textTheme.bodySmall,
         textAlign: TextAlign.center,
       ),
     );

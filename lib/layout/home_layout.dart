@@ -6,7 +6,7 @@ import 'package:islami_app/modules/sebha/sebha_view.dart';
 import 'package:islami_app/modules/settings/settings_view.dart';
 
 class HomeLayout extends StatefulWidget {
-  HomeLayout({super.key});
+  const HomeLayout({super.key});
   static const String routeName = "home_layout";
 
   @override

@@ -5,7 +5,7 @@ class AppTheme {
     primaryColor: const Color(0xffB7935F),
     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
     useMaterial3: true,
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
       centerTitle: true,
@@ -31,6 +31,23 @@ class AppTheme {
       showSelectedLabels: true,
       showUnselectedLabels: false,
       unselectedIconTheme: IconThemeData(color: Colors.white, size: 26),
+    ),
+    textTheme: TextTheme(
+      headlineMedium: TextStyle(
+        fontSize: 30,
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+      ),
+      bodyMedium: TextStyle(
+        fontSize: 25,
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+      ),
+      bodySmall: TextStyle(
+        fontSize: 20,
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+      ),
     ),
   );
 }

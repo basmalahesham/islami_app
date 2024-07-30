@@ -46,11 +46,7 @@ class HadethDetailsView extends StatelessWidget {
                   children: [
                     Text(
                       args.title,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: theme.textTheme.bodyMedium,
                     ),
                     const SizedBox(
                       width: 10,
@@ -75,11 +71,7 @@ class HadethDetailsView extends StatelessWidget {
                   child: Text(
                     args.content,
                     textDirection: TextDirection.rtl,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      fontSize: 20,
-                    ),
+                    style: theme.textTheme.bodySmall,
                   ),
                 ),
               ],

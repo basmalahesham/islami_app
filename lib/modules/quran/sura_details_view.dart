@@ -57,10 +57,7 @@ class _SuraDetailsViewState extends State<SuraDetailsView> {
                 children: [
                   Text(
                     'سورة${args.suraName}',
-                    style: const TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: theme.textTheme.bodyMedium,
                   ),
                   const SizedBox(
                     width: 10,
