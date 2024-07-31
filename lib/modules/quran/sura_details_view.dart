@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/modules/quran/widgets/suraName_widget.dart';
 import 'package:islami_app/modules/quran/widgets/verses_widget.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SuraDetailsView extends StatefulWidget {
   const SuraDetailsView({super.key});
 
@@ -31,7 +31,7 @@ class _SuraDetailsViewState extends State<SuraDetailsView> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: const Text('Islami'),
+          title: Text(AppLocalizations.of(context)!.islami,),
         ),
         body: Container(
           margin: const EdgeInsets.only(

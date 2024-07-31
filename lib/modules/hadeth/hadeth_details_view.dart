@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/modules/hadeth/hadeth_view.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HadethDetailsView extends StatelessWidget {
   const HadethDetailsView({super.key});
   static const String routeName = "hadeth_details_view";
@@ -19,7 +19,7 @@ class HadethDetailsView extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: const Text('Islami'),
+          title: Text(AppLocalizations.of(context)!.islami),
         ),
         body: Container(
           width: MediaQuery.of(context).size.width,

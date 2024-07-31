@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/modules/hadeth/hadeth_details_view.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HadethView extends StatefulWidget {
-  HadethView({super.key});
+  const HadethView({super.key});
 
   @override
   State<HadethView> createState() => _HadethViewState();
@@ -27,7 +27,7 @@ class _HadethViewState extends State<HadethView> {
             endIndent: 20,
           ),
            Text(
-            'الاحاديث',
+            AppLocalizations.of(context)!.ahadeth,
             style: theme.textTheme.bodyMedium,
           ),
           Divider(
