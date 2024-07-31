@@ -2,12 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/core/theme/app_theme.dart';
 import 'package:islami_app/layout/home_layout.dart';
 import 'package:islami_app/modules/hadeth/hadeth_details_view.dart';
-import 'package:islami_app/modules/quran/quran_view.dart';
 import 'package:islami_app/modules/quran/sura_details_view.dart';
 import 'package:islami_app/modules/splash/splash_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app/settings_provider.dart';
+import 'package:provider/provider.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context)=>SettingsProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -23,7 +30,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale('en'),
+      locale: const Locale('en'),
       initialRoute: SplashView.routeName,
       routes: {
         SplashView.routeName: (context) => const SplashView(),
