@@ -260,7 +260,10 @@ class _RadioViewState extends State<RadioView> {
             );
           } else if (snapshot.hasError) {
             return const Center(
-              child: Text('oops there was an error, try later'),
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text('oops there was an error, try later'),
+              ),
             );
           } else {
             return const Center(

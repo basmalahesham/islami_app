@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/core/theme/app_theme.dart';
 import 'package:islami_app/layout/home_layout.dart';
 import 'package:islami_app/modules/hadeth/hadeth_details_view.dart';
+import 'package:islami_app/modules/quran/quran_view.dart';
 import 'package:islami_app/modules/quran/sura_details_view.dart';
 import 'package:islami_app/modules/splash/splash_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.lightTheme,
+      themeMode: ThemeMode.light,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale('en'),
