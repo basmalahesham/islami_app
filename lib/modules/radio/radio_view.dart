@@ -144,7 +144,7 @@ import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/models/radio_model.dart';
-import 'package:islami_app/modules/radio/radio_service.dart';
+import 'package:islami_app/services/radio_service.dart';
 
 class RadioView extends StatefulWidget {
   const RadioView({super.key});
@@ -187,9 +187,7 @@ class _RadioViewState extends State<RadioView> {
                 const Spacer(),
                 Text(
                   data[index].name ?? '',
-                  style: const TextStyle(
-                    fontSize: 25,
-                  ),
+                  style: theme.textTheme.bodyMedium,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,

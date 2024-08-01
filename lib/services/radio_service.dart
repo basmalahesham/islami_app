@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import '../../models/radio_model.dart';
+import '../models/radio_model.dart';
 
 
 Future<RadioModel> getRadio() async {
