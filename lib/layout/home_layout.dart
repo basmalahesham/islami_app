@@ -5,6 +5,8 @@ import 'package:islami_app/modules/radio/radio_view.dart';
 import 'package:islami_app/modules/sebha/sebha_view.dart';
 import 'package:islami_app/modules/settings/settings_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeLayout extends StatefulWidget {
   const HomeLayout({super.key});
@@ -26,11 +28,12 @@ class _HomeLayoutState extends State<HomeLayout> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            'assets/images/default_bg.png',
+            provider.getMainBackground(),
           ),
           fit: BoxFit.fill,
         ),
