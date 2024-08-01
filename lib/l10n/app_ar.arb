@@ -13,5 +13,6 @@
   "arabic": "عربي",
   "sura_name": "اسم السورة",
   "sura_num": "رقم السورة",
-  "ahadeth": "أحاديث"
+  "ahadeth": "أحاديث",
+  "number_of_tasbehat": "عدد التسبيحات"
 }

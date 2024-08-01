@@ -19,9 +19,9 @@ class _HomeLayoutState extends State<HomeLayout> {
   List<Widget> screenWidgets = [
     QuranView(),
     HadethView(),
-    const SebhaView(),
-    const RadioView(),
-    const SettingsView(),
+     SebhaView(),
+     RadioView(),
+     SettingsView(),
   ];
 
   @override

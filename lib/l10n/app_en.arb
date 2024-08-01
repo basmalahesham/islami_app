@@ -13,6 +13,6 @@
   "arabic": "Arabic",
   "sura_name": "SuraName",
   "sura_num": "SuraNumber",
-  "ahadeth": "Ahadeth"
-
+  "ahadeth": "Ahadeth",
+  "number_of_tasbehat": "NumberOfTasbehat"
 }
