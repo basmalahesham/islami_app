@@ -21,23 +21,19 @@ class _HadethViewState extends State<HadethView> {
         children: [
           Image.asset('assets/images/hadeth_logo.png'),
           Divider(
-            thickness: 1.5,
+            thickness: 2,
             color: theme.canvasColor,
-            indent: 20,
-            endIndent: 20,
           ),
            Text(
             AppLocalizations.of(context)!.ahadeth,
             style: theme.textTheme.bodyMedium,
           ),
           Divider(
-            thickness: 1.5,
+            thickness: 2,
             color: theme.canvasColor,
-            indent: 20,
-            endIndent: 20,
           ),
           Expanded(
-            child: ListView.builder(
+            child: ListView.separated(
               itemBuilder: (context, index) => InkWell(
                 onTap: () {
                   Navigator.pushNamed(
@@ -50,6 +46,13 @@ class _HadethViewState extends State<HadethView> {
                   allHadeth[index].title,
                   textAlign: TextAlign.center,
                   style: theme.textTheme.bodyMedium,
+                ),
+              ),
+              separatorBuilder: (context, index) => Padding(
+                padding: EdgeInsets.symmetric(horizontal: 80.0),
+                child: Divider(
+                  color: theme.canvasColor,
+                  thickness: 1.2,
                 ),
               ),
               itemCount: allHadeth.length,

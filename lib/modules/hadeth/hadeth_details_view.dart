@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/modules/hadeth/hadeth_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
+
 class HadethDetailsView extends StatelessWidget {
   const HadethDetailsView({super.key});
   static const String routeName = "hadeth_details_view";
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     var theme = Theme.of(context);
     var args = ModalRoute.of(context)!.settings.arguments as HadethContent;
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(
-              ('assets/images/default_bg.png'),
-            ),
-            fit: BoxFit.fill),
+          image: AssetImage(
+            provider.getMainBackground(),
+          ),
+          fit: BoxFit.fill,
+        ),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -34,7 +39,9 @@ class HadethDetailsView extends StatelessWidget {
             top: 40,
           ),
           decoration: BoxDecoration(
-            color: const Color(0xFFF8F8F8).withOpacity(0.75),
+            color: provider.currentTheme != ThemeMode.dark
+                ? const Color(0xFFF8F8F8).withOpacity(0.75)
+                : const Color(0xFF141A2E).withOpacity(0.75),
             borderRadius: BorderRadius.circular(25),
           ),
           child: SingleChildScrollView(
@@ -46,14 +53,20 @@ class HadethDetailsView extends StatelessWidget {
                   children: [
                     Text(
                       args.title,
-                      style: theme.textTheme.bodyMedium,
+                      style: theme.textTheme.bodyMedium!.copyWith(
+                        color: provider.currentTheme != ThemeMode.dark
+                            ? Colors.black
+                            : theme.canvasColor,
+                      ),
                     ),
                     const SizedBox(
                       width: 10,
                     ),
-                    const Icon(
+                    Icon(
                       Icons.play_circle,
-                      color: Colors.black,
+                      color: provider.currentTheme != ThemeMode.dark
+                          ? Colors.black
+                          : theme.canvasColor,
                     ),
                   ],
                 ),
@@ -71,7 +84,12 @@ class HadethDetailsView extends StatelessWidget {
                   child: Text(
                     args.content,
                     textDirection: TextDirection.rtl,
-                    style: theme.textTheme.bodySmall,
+                    style: theme.textTheme.bodySmall!.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: provider.currentTheme != ThemeMode.dark
+                          ? Colors.black
+                          : theme.canvasColor,
+                    ),
                   ),
                 ),
               ],
