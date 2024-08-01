@@ -1,10 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app/modules/settings/language_bottom_sheet.dart';
 import 'package:islami_app/modules/settings/theme_bottom_sheet.dart';
 import 'package:provider/provider.dart';
 
 import '../../provider/settings_provider.dart';
-import 'language_bottom_sheet.dart';
 
 class SettingsView extends StatefulWidget {
   const SettingsView({super.key});
@@ -40,7 +41,7 @@ class _SettingsViewState extends State<SettingsView> {
                   top: 20,
                 ),
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                 height: 55,
                 decoration: BoxDecoration(
                     borderRadius: const BorderRadius.all(
@@ -51,7 +52,9 @@ class _SettingsViewState extends State<SettingsView> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      AppLocalizations.of(context)!.arabic,
+                      provider.currentLocal == 'en'
+                          ? AppLocalizations.of(context)!.english
+                          : AppLocalizations.of(context)!.arabic,
                     ),
                     Icon(
                       Icons.arrow_drop_down_sharp,
@@ -77,7 +80,7 @@ class _SettingsViewState extends State<SettingsView> {
                   top: 20,
                 ),
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                 height: 55,
                 decoration: BoxDecoration(
                     borderRadius: const BorderRadius.all(
@@ -88,7 +91,9 @@ class _SettingsViewState extends State<SettingsView> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      AppLocalizations.of(context)!.light,
+                      provider.isDark()
+                          ? AppLocalizations.of(context)!.dark
+                          : AppLocalizations.of(context)!.light,
                     ),
                     Icon(
                       Icons.arrow_drop_down_sharp,

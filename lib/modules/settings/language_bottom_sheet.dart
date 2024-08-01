@@ -20,16 +20,18 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
         borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(12), topRight: Radius.circular(12)),
+            topLeft: Radius.circular(12), topRight: Radius.circular(12),),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           InkWell(
             onTap: () {
-              //provider.changeLanguage("en");
+              provider.changeLanguage("en");
             },
-            child: getUnselectedItem(
+            child: provider.currentLocal == 'en'
+                ? getSelectItem(AppLocalizations.of(context)!.english)
+                : getUnselectedItem(
               AppLocalizations.of(context)!.english,
             ),
           ),
@@ -38,9 +40,11 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
           ),
           InkWell(
             onTap: () {
-             // provider.changeLanguage("ar");
+              provider.changeLanguage("ar");
             },
-            child: getUnselectedItem(
+            child: provider.currentLocal == 'ar'
+                ? getSelectItem(AppLocalizations.of(context)!.arabic)
+                : getUnselectedItem(
               AppLocalizations.of(context)!.arabic,
             ),
           ),

@@ -19,27 +19,33 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
         borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(12), topRight: Radius.circular(12)),
+          topLeft: Radius.circular(12),
+          topRight: Radius.circular(12),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           InkWell(
             onTap: () {
-              // provider.changeTheme(ThemeMode.light);
+              provider.changeTheme(ThemeMode.light);
             },
-            child: getSelectItem(AppLocalizations.of(context)!.light),
+            child: provider.isDark()
+                ? getUnselectedItem(AppLocalizations.of(context)!.light)
+                : getSelectItem(AppLocalizations.of(context)!.light),
           ),
           const SizedBox(
             height: 8,
           ),
           InkWell(
             onTap: () {
-              // provider.changeTheme(ThemeMode.dark);
+              provider.changeTheme(ThemeMode.dark);
             },
-            child: getUnselectedItem(
-              AppLocalizations.of(context)!.dark,
-            ),
+            child: provider.isDark()
+                ? getSelectItem(AppLocalizations.of(context)!.dark)
+                : getUnselectedItem(
+                    AppLocalizations.of(context)!.dark,
+                  ),
           ),
         ],
       ),
