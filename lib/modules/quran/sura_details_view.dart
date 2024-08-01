@@ -3,6 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:islami_app/modules/quran/widgets/suraName_widget.dart';
 import 'package:islami_app/modules/quran/widgets/verses_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../provider/settings_provider.dart';
+
 class SuraDetailsView extends StatefulWidget {
   const SuraDetailsView({super.key});
 
@@ -18,22 +22,29 @@ class _SuraDetailsViewState extends State<SuraDetailsView> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     var theme = Theme.of(context);
     var args = ModalRoute.of(context)!.settings.arguments as SuraDetails;
     if (versContent.isEmpty) readFile(args.suraNumber);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/default_bg.png'),
+          image: AssetImage(
+            provider.getMainBackground(),
+          ),
           fit: BoxFit.fill,
         ),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.islami,),
+          title: Text(
+            AppLocalizations.of(context)!.islami,
+          ),
         ),
         body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
           margin: const EdgeInsets.only(
             top: 15,
             bottom: 80,
@@ -43,10 +54,10 @@ class _SuraDetailsViewState extends State<SuraDetailsView> {
           padding: const EdgeInsets.only(
             top: 30,
           ),
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
-            color: const Color(0xFFF8F8F8).withOpacity(0.8),
+            color: provider.currentTheme != ThemeMode.dark
+                ? const Color(0xFFF8F8F8).withOpacity(0.75)
+                : const Color(0xFF141A2E).withOpacity(0.75),
             borderRadius: BorderRadius.circular(25),
           ),
           child: Column(
@@ -57,12 +68,21 @@ class _SuraDetailsViewState extends State<SuraDetailsView> {
                 children: [
                   Text(
                     'سورة${args.suraName}',
-                    style: theme.textTheme.bodyMedium,
+                    style: theme.textTheme.bodyMedium!.copyWith(
+                      color: provider.currentTheme != ThemeMode.dark
+                          ? Colors.black
+                          : theme.canvasColor,
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
                   ),
-                  const Icon(Icons.play_circle),
+                  Icon(
+                    Icons.play_circle,
+                    color: provider.currentTheme != ThemeMode.dark
+                        ? Colors.black
+                        : theme.canvasColor,
+                  ),
                 ],
               ),
               Divider(

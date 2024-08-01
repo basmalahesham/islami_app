@@ -11,7 +11,14 @@ class SuraNameWidget extends StatelessWidget {
     var theme = Theme.of(context);
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, SuraDetailsView.routeName,arguments: SuraDetails(suraName, suraNumber),);
+        Navigator.pushNamed(
+          context,
+          SuraDetailsView.routeName,
+          arguments: SuraDetails(
+            suraName,
+            suraNumber,
+          ),
+        );
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -20,7 +27,9 @@ class SuraNameWidget extends StatelessWidget {
             child: Text(
               '${suraNumber + 1}',
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodyMedium,
+              style: theme.textTheme.bodyMedium!.copyWith(
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
           Container(
@@ -32,7 +41,9 @@ class SuraNameWidget extends StatelessWidget {
             child: Text(
               suraName,
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodyMedium,
+              style: theme.textTheme.bodyMedium!.copyWith(
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
         ],
@@ -40,7 +51,8 @@ class SuraNameWidget extends StatelessWidget {
     );
   }
 }
-class SuraDetails{
+
+class SuraDetails {
   String suraName;
   int suraNumber;
   SuraDetails(this.suraName, this.suraNumber);
